@@ -4,6 +4,7 @@
 
 # Packages #
 ###########
+.phar
 *.7z
 *.dmg
 *.gz
