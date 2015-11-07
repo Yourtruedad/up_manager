@@ -1,17 +1,19 @@
 <?php
 
+require __DIR__ . '/config/config.php';
+
 require __DIR__ . '/vendor/autoload.php';
+
+require __DIR__ . '/models/db.class.php';
+require __DIR__ . '/models/monolog.class.php';
 
 echo 'UPMANAGER Test';
 
+$db = new db();
+var_dump($db);
+//var_dump($db->dbConnect());
+var_dump($db->select('SELECT * FROM reputation_center_preferences;'));
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+new monolog('ERROR', 'Error msg');
 
-// create a log channel
-$log = new Logger('name');
-$log->pushHandler(new StreamHandler('app.log', Logger::WARNING));
-
-// add records to the log
-$log->addWarning('Foo');
-$log->addError('Bar');
+new monolog('WARNING', 'warning!');
