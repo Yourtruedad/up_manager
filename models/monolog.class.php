@@ -4,7 +4,6 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 class monolog {
-
     public function __construct($type, $message) {
         $this->saveLog($type, $message);
     }
